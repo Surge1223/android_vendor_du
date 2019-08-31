@@ -52,19 +52,17 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/du/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/du/prebuilt/common/bin/50-lineage.sh:system/addon.d/50-lineage.sh \
-    vendor/du/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/lineage/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/lineage/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/du/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/du/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/du/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/du/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/du/prebuilt/common/etc/sysconfig/permissions/backup.xml:system/etc/sysconfig/backup.xml \
     vendor/du/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/du/prebuilt/common/bin/sysinit:system/bin/sysinit
 
@@ -94,6 +92,11 @@ PRODUCT_COPY_FILES += \
     vendor/extras/build/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/extras/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/extras/build/tools/50-du.sh:system/addon.d/50-du.sh
+
+PRODUCT_COPY_FILES += \
+    vendor/du/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/du/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/du/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # Weather client
 PRODUCT_COPY_FILES += \
