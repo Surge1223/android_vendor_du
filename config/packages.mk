@@ -1,8 +1,8 @@
 # Packages
 PRODUCT_PACKAGES += \
-    CustomDoze \
-    WallpaperPicker \
-    WeatherClient
+#    CustomDoze \
+    WallpaperPicker2
+#    WeatherClient
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
